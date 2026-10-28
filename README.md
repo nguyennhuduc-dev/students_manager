@@ -1,295 +1,55 @@
-# 🎓 Hệ thống Quản lý Sinh viên — Python
+# Student Management System
 
-## 📌 Giới thiệu
+Hệ thống quản lý sinh viên bằng Python theo hướng OOP, giao diện Terminal tiếng Việt và SQLite để lưu dữ liệu lâu dài.
 
-**Hệ thống Quản lý Sinh viên** là mini-project được xây dựng để thực hành các kiến thức Python cơ bản.
+## Tính năng
+- Thêm, xem, tìm kiếm, cập nhật và xóa sinh viên.
+- Chặn mã sinh viên trùng; chuẩn hóa mã thành chữ in hoa.
+- Kiểm tra tuổi (15–100), điểm (0–10), giới tính và ngày sinh `DD/MM/YYYY`.
+- Tự động xếp loại học lực.
+- Sắp xếp theo mã, họ tên, tuổi hoặc điểm.
+- Thống kê số lượng, tuổi/điểm trung bình, điểm cao nhất/thấp nhất và phân bố học lực.
+- Lưu dữ liệu trong SQLite sau khi thoát ứng dụng.
+- Xuất CSV tương thích Excel.
+- Kiểm thử tự động bằng `unittest` với database tạm.
 
-Dữ liệu sinh viên được lưu dưới dạng:
+## Yêu cầu
+- Python 3.10 trở lên (khuyến nghị Python 3.11+).
+- Không cần cài thư viện bên ngoài.
 
-```python
-[mã_sv, họ_tên, tuổi, ngày_sinh, giới_tính, điểm_tb]
-```
-
-Project hỗ trợ các chức năng quản lý sinh viên như thêm, xem, tìm kiếm, cập nhật, xóa, sắp xếp, thống kê và xuất báo cáo.
-
----
-
-## ✨ Chức năng
-
-| STT | Chức năng | Mô tả |
-|---|---|---|
-| 1 | 📝 Thêm sinh viên | Thêm một hoặc nhiều sinh viên |
-| 2 | 📋 Xem danh sách | Hiển thị toàn bộ danh sách |
-| 3 | 🔍 Tìm kiếm | Tìm theo mã, tên, giới tính, xếp loại |
-| 4 | ✏️ Cập nhật | Cập nhật thông tin sinh viên |
-| 5 | 🗑️ Xóa | Xóa sinh viên theo mã |
-| 6 | 📊 Sắp xếp | Sắp xếp theo nhiều tiêu chí |
-| 7 | 📈 Thống kê | Thống kê và phân loại sinh viên |
-| 8 | 📄 Xuất báo cáo | Hiển thị báo cáo tổng hợp |
-
----
-
-## 🧑‍🎓 Thông tin sinh viên
-
-Mỗi sinh viên gồm:
-
-- **Mã sinh viên**
-- **Họ và tên**
-- **Tuổi**
-- **Ngày sinh**
-- **Giới tính**
-- **Điểm trung bình**
-
-Ví dụ:
-
-```python
-["SV001", "Nguyễn Văn An", 20, "15/03/2006", "Nam", 8.5]
-```
-
----
-
-## 🏆 Xếp loại học lực
-
-| Điểm | Xếp loại |
-|---:|---|
-| ≥ 9.0 | Xuất sắc |
-| ≥ 8.0 | Giỏi |
-| ≥ 6.5 | Khá |
-| ≥ 5.0 | Trung bình |
-| ≥ 3.5 | Yếu |
-| < 3.5 | Kém |
-
----
-
-## 🔎 Tìm kiếm
-
-Hệ thống hỗ trợ tìm kiếm theo:
-
+## Cấu trúc
 ```text
-1. Mã sinh viên
-2. Họ tên
-3. Giới tính
-4. Xếp loại học lực
-```
-
-Tìm kiếm theo họ tên có thể sử dụng từ khóa.
-
-Ví dụ:
-
-```text
-Nhập tên cần tìm: nguyễn
-```
-
----
-
-## 📊 Sắp xếp
-
-Có thể sắp xếp danh sách theo:
-
-- Họ tên A → Z
-- Họ tên Z → A
-- Điểm trung bình cao → thấp
-- Điểm trung bình thấp → cao
-- Tuổi tăng dần
-- Tuổi giảm dần
-- Mã sinh viên tăng dần
-
----
-
-## 📈 Thống kê
-
-Chương trình cung cấp các thông tin:
-
-- Tổng số sinh viên
-- Số lượng Nam / Nữ / Khác
-- Tuổi trung bình
-- Tuổi nhỏ nhất
-- Tuổi lớn nhất
-- Điểm trung bình chung
-- Điểm cao nhất
-- Điểm thấp nhất
-- Tỷ lệ đạt từ 5.0 trở lên
-- Số lượng sinh viên theo từng xếp loại
-- Sinh viên có điểm cao nhất
-- Sinh viên có điểm thấp nhất
-
----
-
-## 📄 Xuất báo cáo
-
-Chức năng báo cáo hiển thị:
-
-1. Danh sách sinh viên
-2. Thông tin xếp loại
-3. Danh sách sinh viên theo từng nhóm học lực
-
-Các nhóm gồm:
-
-```text
-Xuất sắc
-Giỏi
-Khá
-Trung bình
-Yếu
-Kém
-```
-
----
-
-## 🧪 Dữ liệu mẫu
-
-Project có sẵn dữ liệu mẫu để kiểm tra nhanh chương trình.
-
-Khi khởi động, chương trình sẽ hỏi:
-
-```text
-Nạp dữ liệu mẫu để thử nghiệm? (c/k):
-```
-
-Nếu chọn `c`, hệ thống sẽ tự động nạp dữ liệu mẫu.
-
----
-
-## 🛠️ Công nghệ sử dụng
-
-- 🐍 Python 3
-- 💻 Console / Terminal
-- `list`
-- `for`
-- `while`
-- `if / elif / else`
-- `function`
-- `lambda`
-- `sort()`
-- Module `os`
-
-Project **không yêu cầu cài đặt thư viện bên ngoài**.
-
----
-
-## 📂 Cấu trúc project
-
-```text
-Student-Management/
-│
+students_manager/
 ├── main.py
-└── README.md
+├── src/models/student.py
+├── src/storage/database.py
+├── src/repositories/student_repository.py
+├── src/services/student_manager.py
+├── src/ui/console.py
+└── tests/test_student_manager.py
 ```
 
-### `main.py`
-
-Chứa toàn bộ mã nguồn của hệ thống quản lý sinh viên.
-
-### `README.md`
-
-Tài liệu giới thiệu, hướng dẫn sử dụng và thông tin về project.
-
----
-
-## 🚀 Cài đặt
-
-### 1. Kiểm tra Python
-
-```bash
+## Chạy trên Windows / VS Code
+Mở Terminal tại thư mục gốc dự án:
+```powershell
 python --version
-```
-
-Hoặc trên Windows:
-
-```bash
-py --version
-```
-
-### 2. Clone repository
-
-```bash
-git clone <YOUR_REPOSITORY_URL>
-```
-
-### 3. Di chuyển vào thư mục project
-
-```bash
-cd Student-Management
-```
-
-### 4. Chạy chương trình
-
-```bash
 python main.py
 ```
+Database tự tạo tại `data/students.db`.
 
-Trên Windows:
-
-```bash
-py main.py
+## Chạy kiểm thử
+```powershell
+python -m unittest discover -s tests -v
 ```
 
----
+## Xuất báo cáo
+Trong menu, chọn `8. Xuất báo cáo CSV`. File mặc định: `reports/students_report.csv`, dùng UTF-8 BOM để Excel hiển thị tiếng Việt tốt.
 
-## 🎯 Kiến thức đã thực hành
+## Kiến trúc OOP
+- **Model:** `Student` chuẩn hóa dữ liệu, xác thực và xếp loại.
+- **Repository:** truy vấn SQL có tham số, quản lý thao tác dữ liệu.
+- **Service:** nghiệp vụ, tìm kiếm, sắp xếp, thống kê và xuất CSV.
+- **Database:** schema và kết nối SQLite.
+- **UI:** nhập/xuất Terminal, không chứa truy vấn SQL.
 
-Project giúp thực hành:
-
-```text
-Python cơ bản
-      ↓
-Biến & kiểu dữ liệu
-      ↓
-List
-      ↓
-List of Lists
-      ↓
-Điều kiện
-      ↓
-Vòng lặp
-      ↓
-Function
-      ↓
-Validation
-      ↓
-Tìm kiếm
-      ↓
-Sắp xếp
-      ↓
-Thống kê
-      ↓
-CRUD
-      ↓
-Project thực tế
-```
-
----
-
-## 🔮 Hướng phát triển
-
-Trong tương lai có thể phát triển thêm:
-
-- [ ] Lưu dữ liệu bằng JSON
-- [ ] Lưu dữ liệu bằng CSV
-- [ ] Kết nối SQLite
-- [ ] Kết nối SQL Server
-- [ ] Xây dựng giao diện GUI
-- [ ] Xây dựng Web Application
-- [ ] Đăng nhập và phân quyền
-- [ ] Quản lý lớp học
-- [ ] Quản lý môn học
-- [ ] Quản lý điểm
-- [ ] Xuất Excel
-- [ ] Xuất PDF
-
----
-
-## 👨‍💻 Tác giả
-
-**Nguyễn Như Đức**
-
-🎓 Sinh viên ngành **Công nghệ thông tin**
-
-
----
-
-## 📜 License
-
-Project được thực hiện với mục đích **học tập và thực hành Python**.
-
-Bạn có thể sử dụng và chỉnh sửa project cho mục đích học tập cá nhân.
+> Đây là project học tập chạy cục bộ, chưa có đăng nhập/phân quyền hoặc đồng bộ nhiều máy. Hãy chạy `python main.py` từ thư mục gốc.
