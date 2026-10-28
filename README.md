@@ -1,7 +1,5 @@
 # 🎓 Hệ thống Quản lý Sinh viên — Python
 
-
-
 ## 📌 Giới thiệu
 
 **Hệ thống Quản lý Sinh viên** là mini-project được xây dựng để thực hành các kiến thức Python cơ bản.
