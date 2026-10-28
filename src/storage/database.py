@@ -1,6 +1,8 @@
 """SQLite connection and schema initialization."""
 import sqlite3
+from contextlib import contextmanager
 from pathlib import Path
+from collections.abc import Iterator
 
 
 class Database:
@@ -9,11 +11,17 @@ class Database:
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self.initialize()
 
-    def connect(self) -> sqlite3.Connection:
+    @contextmanager
+    def connect(self) -> Iterator[sqlite3.Connection]:
         connection = sqlite3.connect(self.db_path, timeout=10)
         connection.row_factory = sqlite3.Row
         connection.execute("PRAGMA foreign_keys = ON")
-        return connection
+
+        try:
+            with connection:
+                yield connection
+        finally:
+            connection.close()
 
     def initialize(self) -> None:
         with self.connect() as connection:
