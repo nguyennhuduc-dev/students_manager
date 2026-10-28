@@ -1,3 +1,9 @@
+<div align="center">
+
+<img src="assets/banner.svg" alt="Students Manager Banner" width="100%">
+
+</div>
+
 # 🎓 Student Management System
 
 <div align="center">
@@ -84,19 +90,18 @@ students_manager/
 ├── 📄 main.py
 ├── 📄 README.md
 │
+├── 📁 assets/
+│   └── banner.svg
+│
 ├── 📁 src/
 │   ├── 📁 models/
 │   │   └── student.py
-│   │
 │   ├── 📁 storage/
 │   │   └── database.py
-│   │
 │   ├── 📁 repositories/
 │   │   └── student_repository.py
-│   │
 │   ├── 📁 services/
 │   │   └── student_manager.py
-│   │
 │   └── 📁 ui/
 │       └── console.py
 │
@@ -234,7 +239,7 @@ File sử dụng **UTF-8 BOM**, giúp tiếng Việt hiển thị tốt khi mở
 ║  2. Xem danh sách                           ║
 ║  3. Tìm kiếm                                ║
 ║  4. Cập nhật                                ║
-║  5. Xóa sinh viên                            ║
+║  5. Xóa sinh viên                           ║
 ║  6. Sắp xếp                                 ║
 ║  7. Thống kê                                ║
 ║  8. Xuất báo cáo CSV                        ║
