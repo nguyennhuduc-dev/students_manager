@@ -285,7 +285,6 @@ Trong tương lai có thể phát triển thêm:
 
 🎓 Sinh viên ngành **Công nghệ thông tin**
 
-📚 Python — Week 05 Mini Project
 
 ---
 
