@@ -1,11 +1,6 @@
-# students_manager
-
 # 🎓 Hệ thống Quản lý Sinh viên — Python
 
-> **Week 05 Mini Project**  
-> Project Python xây dựng hệ thống quản lý sinh viên bằng **List of Lists**, chạy trên Console/Terminal.
 
----
 
 ## 📌 Giới thiệu
 
