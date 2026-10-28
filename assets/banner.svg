@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" role="img" aria-label="Students Manager banner">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eff8ff"/><stop offset="1" stop-color="#b9ddff"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b3b82"/><stop offset="1" stop-color="#2584f4"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-opacity=".18"/></filter>
+</defs>
+<rect width="1600" height="520" rx="32" fill="url(#bg)"/>
+<circle cx="1430" cy="70" r="210" fill="#fff" opacity=".32"/>
+<circle cx="1170" cy="500" r="300" fill="#fff" opacity=".28"/>
+<path d="M0 410 C360 330 620 470 920 390 S1350 330 1600 400 V520 H0Z" fill="#1677df" opacity=".95"/>
+<g font-family="Arial, Helvetica, sans-serif">
+  <text x="90" y="155" font-size="74" font-weight="800" fill="#0b2f68">Students</text>
+  <text x="90" y="230" font-size="74" font-weight="800" fill="#1677df">Manager</text>
+  <text x="94" y="280" font-size="25" fill="#365b84">Quản lý sinh viên đơn giản • Hiệu quả • Hiện đại</text>
+  <g filter="url(#shadow)">
+    <rect x="94" y="320" width="190" height="58" rx="29" fill="#fff"/>
+    <rect x="302" y="320" width="190" height="58" rx="29" fill="#fff"/>
+    <rect x="510" y="320" width="210" height="58" rx="29" fill="#eafff5"/>
+  </g>
+  <text x="130" y="357" font-size="23" font-weight="700" fill="#1769aa">🐍 Python</text>
+  <text x="342" y="357" font-size="23" font-weight="700" fill="#1769aa">🗄 SQLite</text>
+  <text x="548" y="357" font-size="23" font-weight="700" fill="#16845b">✓ Unit Tests</text>
+  <text x="90" y="468" font-size="24" font-weight="700" fill="#fff">Better Students • Brighter Future</text>
+</g>
+<g filter="url(#shadow)">
+  <rect x="900" y="105" width="560" height="300" rx="28" fill="#17365f"/>
+  <rect x="925" y="130" width="510" height="235" rx="14" fill="#0d1d32"/>
+  <circle cx="955" cy="157" r="7" fill="#ff6257"/><circle cx="978" cy="157" r="7" fill="#ffc043"/><circle cx="1001" cy="157" r="7" fill="#35c759"/>
+  <g font-family="monospace" font-size="21" fill="#b8e0ff">
+    <text x="955" y="200">=== QUẢN LÝ SINH VIÊN ===</text>
+    <text x="955" y="232" fill="#78e08f">1. Thêm sinh viên</text>
+    <text x="955" y="262">2. Xem danh sách</text>
+    <text x="955" y="292">3. Tìm kiếm</text>
+    <text x="955" y="322">4. Cập nhật</text>
+    <text x="1190" y="232">5. Xóa</text>
+    <text x="1190" y="262">6. Sắp xếp</text>
+    <text x="1190" y="292">7. Thống kê</text>
+    <text x="1190" y="322">8. Xuất CSV</text>
+  </g>
+  <path d="M850 420 H1510 L1440 450 H920Z" fill="#8db7e9"/>
+</g>
+<g transform="translate(1340 40)"><ellipse cx="80" cy="40" rx="80" ry="22" fill="#1677df"/><rect x="0" y="40" width="160" height="90" fill="#1677df"/><ellipse cx="80" cy="130" rx="80" ry="22" fill="#0b5db8"/><ellipse cx="80" cy="40" rx="80" ry="22" fill="#56a5ff"/><text x="80" y="91" text-anchor="middle" font-size="24" font-family="Arial" font-weight="700" fill="white">SQLite</text></g>
+<g transform="translate(690 35)"><path d="M0 55 L85 0 L170 55 L85 105Z" fill="#0b3b82"/><path d="M35 62 V125 Q85 155 135 125 V62" fill="#1677df"/><rect x="78" y="105" width="14" height="42" fill="#ffbf22"/></g>
+</svg>
